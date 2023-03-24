@@ -1,0 +1,32 @@
+class Solution {
+    public int maxSubArray(int[] a) 
+    {
+        int n = a.length;  int sum=0;
+        int max= Integer.MIN_VALUE;
+        for(int i =0 ; i< n ;i++)
+        {
+            sum= sum+a[i];
+            max= Math.max(max, sum);
+            if(sum<0)
+                sum=0;
+        }
+        return max;
+    }
+}
+// Solution 2;
+//     int n = a.length; int sum= a[0]; 
+    //     int prevSum = 0;  int currSum;
+    //     for( int i =0 ;i<n ;i++)
+    //     {
+    //         currSum= prevSum+ a[i];
+    //         sum = Math.max( sum, currSum);
+    //         prevSum= Math.max(currSum, 0);
+    //     }
+    //    return sum;
+
+
+// Follwing up questions
+// 1. Length of the max subarray
+// 2. Elements of the max subarray
+// 4. Start and End index of max subarray
+// 5. This is very important concept from interview point so try to get the ans of above mentioned point and have confidence on this algorithm.
